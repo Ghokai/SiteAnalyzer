@@ -1,0 +1,18 @@
+<div class="search">
+  <mat-form-field class="full-width-search">
+    <input
+      matInput
+      placeholder="Enter site name and click search for analyze..."
+      name="siteName"
+      [(ngModel)]="siteName"
+      [attr.disabled]="isProcessing ? '' : null"
+    />
+  </mat-form-field>
+  <button
+    mat-icon-button
+    (click)="onAnalyzeSite()"
+    [attr.disabled]="isProcessing ? '' : null"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+</div>

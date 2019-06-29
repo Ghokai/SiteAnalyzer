@@ -1,0 +1,72 @@
+<mat-card>
+  <mat-card-title class="result-title">Analyze Results</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <b>Document Version:</b>
+        <mat-chip color="primary" selected>{{
+          resultObj.docType
+        }}</mat-chip></mat-list-item
+      >
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <b>Page Title:</b>
+        <mat-chip color="primary" selected>{{
+          resultObj.pageTitle
+        }}</mat-chip></mat-list-item
+      >
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <b>Headlings Analyze:</b>
+      </mat-list-item>
+      <mat-list-item *ngFor="let key of objectKeys(resultObj.headlings)">
+        <span [matBadge]="resultObj.headlings[key]" matBadgeOverlap="false">
+          {{ key }}
+        </span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <b>Links Analyze:</b>
+      </mat-list-item>
+      <mat-list-item>
+        <span
+          [matBadge]="resultObj.links.internalLinks"
+          matBadgeOverlap="false"
+        >
+          Internal Links
+        </span>
+      </mat-list-item>
+      <mat-list-item>
+        <span
+          [matBadge]="resultObj.links.externalLinks"
+          matBadgeOverlap="false"
+        >
+          External Links
+        </span>
+      </mat-list-item>
+      <mat-list-item>
+        <span
+          [matBadge]="resultObj.links.inaccesibleInternalLinks"
+          matBadgeOverlap="false"
+        >
+          Inaccesible Internal Links
+        </span>
+      </mat-list-item>
+      <mat-list-item>
+        <span
+          [matBadge]="resultObj.links.inaccesibleExternalLinks"
+          matBadgeOverlap="false"
+        >
+          Inaccesible External Links
+        </span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <b>Has Login Form:</b>
+        <mat-chip color="primary" selected
+          >{{ resultObj.hasLoginForm ? "Yes" : "No" }}
+        </mat-chip>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,13 @@
+<app-search
+  (analyzeEvent)="analyzeHandler($event)"
+  [isProcessing]="isProcessing"
+></app-search>
+<div *ngIf="isProcessing">
+  <app-loader></app-loader>
+</div>
+<div *ngIf="error">
+  <app-error [errorObj]="error"></app-error>
+</div>
+<div *ngIf="analyzeResult">
+  <app-result [resultObj]="analyzeResult"></app-result>
+</div>
