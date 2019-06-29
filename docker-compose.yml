@@ -1,0 +1,29 @@
+version: '3'
+services:
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "6379:6379"
+    entrypoint: redis-server --appendonly yes
+    restart: always
+  analyzer-server:
+    container_name: analyzer-server
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    links:
+      - redis  
+  analyzer-client:
+    container_name: analyzer-client
+    build:
+      context: .
+      dockerfile: analyzerclient.Dockerfile
+    ports:
+      - "4200:4200"  
+    links:
+      - analyzer-server        

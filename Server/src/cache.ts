@@ -1,9 +1,10 @@
 import * as Redis from "ioredis";
+import {redisHost, redisPort} from "./configuration";
 
 export class CacheManager {
   redisClient: Redis.Redis = null;
   constructor() {
-    this.redisClient = new Redis();
+    this.redisClient = new Redis(redisPort, redisHost);
   }
 
   setResult(siteName: string, result: object): void {
