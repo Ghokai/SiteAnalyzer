@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc ./src/main.ts --outDir build",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/main.ts",
-    "prod": "tsc && node ./build/main.js"
+    "prod": "tsc ./src/main.ts --outDir build && node ./build/main.js"
   },
   "author": "",
   "license": "ISC",

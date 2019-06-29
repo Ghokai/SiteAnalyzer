@@ -2,6 +2,9 @@
 
 # compiled output
 /dist
+/Server/build
+/AnalyzerClient/dist
+
 /tmp
 /out-tsc
 # Only exists if Bazel was run
