@@ -26,8 +26,16 @@ redis cache runs on redis:6379 in container
 
 
 > User goes to analyzer-client(htttp://localhost:4200) and enters sitename(url) for getting analyze results of site and click button.
+
 > Analyzer-client make post request to analyzer-server(http://localhost:3000/analyze) with sitename parameter
+
 > Analyzer-server check redis cache if analyze result calculated before in 24 hours server will be return analyze result immediately from cache.
+
 > If analyze result not found in cache. Analyzer server will make request to site and load its content. And will make some web crawling process for extracting information from document content.
+
 > After analyze result gathered. result will be storing in the cache server for later usage with 1 day expiration time.
+
 > Analyzer server will be return analyze results to analyzer-client and analyzer client shows analyze results to user. 
+---------------------------------------------
+
+
