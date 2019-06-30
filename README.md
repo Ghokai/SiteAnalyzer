@@ -25,7 +25,7 @@ redis cache runs on redis:6379 in container
 ![image](https://user-images.githubusercontent.com/11095906/60393536-c8d5bc80-9acb-11e9-9f58-e7cfd4176e46.png)
 
 
-> User goes to analyzer-client(htttp://localhost:4200) and enters sitename(url) for getting analyze results of site and click button.
+> User goes to analyzer-client(http://localhost:4200) and enters sitename(url) for getting analyze results of site and click button.
 
 > Analyzer-client make post request to analyzer-server(http://localhost:3000/analyze) with sitename parameter
 
