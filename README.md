@@ -1,7 +1,7 @@
 # SiteAnalyzer
-Web Crawler with Angular 8, Expressjs and Redis
+## Web Crawler with Angular 8, Expressjs and Redis
 
-You can simple run redis, server and client in docker with docker compose
+You can simple run redis, server and client in docker containers with docker compose
 
 
     docker-compose up 
